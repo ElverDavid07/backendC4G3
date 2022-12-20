@@ -1,12 +1,12 @@
 import books from '../model/libros.js'
 
-//(get) obtener todos los libros
+//?(get) obtener todos los libros
 export const getBooks = async (req,res)=>{
     await books.find()
     .then((data)=>res.json(data))
     .catch((error) => { res.json({ message: error }) })
 }
-//(get) obtener libros por id
+//?(get) obtener libros por id
 export const getBooksById = async(req,res)=>{
     const {id} = req.params;
     await books.findById(id)
@@ -14,7 +14,7 @@ export const getBooksById = async(req,res)=>{
     .catch((error) => { res.json({ message: error }) })
 }
 
-//(post) agregar libros
+//?(post) agregar libros
 export const postBooks = async(req,res)=>{
     const guardarBooks = books(req.body);
     await guardarBooks.save()
@@ -22,7 +22,7 @@ export const postBooks = async(req,res)=>{
         .catch((error) => { res.json({ message: error }) })
 }
 
-//(put) actualizar libros
+//?(put) actualizar libros
 
 export const putBooks = async(req,res)=>{
     const {id} = req.params;
@@ -32,7 +32,7 @@ export const putBooks = async(req,res)=>{
         .catch((error) => { res.json({ message: error }) })
 }
 
-//(delate) eliminar libros
+//?(delate) eliminar libros
 export const delateBooks = async(req,res)=>{
     const {id} = req.params;
    await books.deleteOne({_id:id})

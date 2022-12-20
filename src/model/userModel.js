@@ -27,7 +27,4 @@ roles:[{
 }]
 },{versionKey:false})
 
-
-
-
 export default model("user",usermodel);
